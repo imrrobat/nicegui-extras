@@ -1,0 +1,12 @@
+[project]
+name = "nicegui-extras"
+version = "0.1.0"
+description = "A collection of CSS and utility helpers for NiceGUI"
+authors = [{ name = "Ali Heydari", email = "imrrobat@gmail.com" }]
+readme = "README.md"
+license = { text = "MIT" }
+dependencies = ["nicegui>=1.4.0"]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
