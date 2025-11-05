@@ -18,3 +18,125 @@
 
 ```bash
 pip install nicegui-extras
+````
+
+---
+
+## 💡 How to Use
+
+### 🧩 In `nicegui_extras.utils`
+
+**Right-to-left Persian layout**
+
+```python
+from nicegui_extras.utils import farsi_rtl
+
+farsi_rtl()  # enables RTL and Vazir font automatically
+```
+
+**Disable page scrolling**
+
+```python
+from nicegui_extras.utils import no_scroll
+
+no_scroll()  # disables scrolling on page
+```
+
+---
+
+### 🎨 In `nicegui_extras.style`
+
+**Link as button**
+
+```python
+from nicegui_extras.style import link_button
+
+def link_button(text: str, url: str, new_tab: bool = False):
+    """Create a link styled as a button."""
+    classes = 'q-btn q-btn-item non-selectable no-outline q-btn--flat q-btn--rectangle'
+    return ui.link(text, url, new_tab=new_tab).classes(classes)
+```
+
+Usage:
+
+```python
+link_button('Visit Site', 'https://nicegui.io', new_tab=True)
+```
+
+---
+
+### 💬 Animated dialog (CSS class)
+
+For now, you can use this class directly to make a dialog animated and blurred:
+
+```python
+animated_dialog = 'backdrop-filter="blur(8px) brightness(20%)"'
+```
+
+Example:
+
+```python
+ui.dialog().props(animated_dialog)
+```
+
+---
+
+### 📌 Sticky menu row
+
+To create a sticky top menu, use:
+
+```python
+menu_row = '''
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #222;
+    color: white;
+    padding: 10px;
+    z-index: 1000;
+'''
+```
+
+Example:
+
+```python
+with ui.row().style(menu_row):
+    ui.label('My Menu')
+```
+
+---
+
+## 🧠 Example App
+
+```python
+from nicegui import ui
+from nicegui_extras.utils import farsi_rtl, no_scroll
+from nicegui_extras.style import link_button, menu_row
+
+farsi_rtl()
+no_scroll()
+
+with ui.row().style(menu_row):
+    ui.label('Main Menu')
+
+link_button('Home', '/home')
+
+ui.run()
+```
+
+---
+
+## 🧑‍💻 Author
+
+Created by **Ali Heydari** — a Python developer and NiceGUI enthusiast.
+More features like improved dark mode and ready-made themes are coming soon!
+
+---
+
+## 📜 License
+
+MIT License © 2025 Ali Heydari
+
+```
+

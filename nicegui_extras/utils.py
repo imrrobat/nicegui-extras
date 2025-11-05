@@ -1,5 +1,9 @@
-farsi_rtl = '''
-        <link href="https://cdn.jsdelivr.net/npm/vazir-font@30.1.0/dist/font-face.css" rel="stylesheet" type="text/css" />
+from nicegui import ui 
+
+def farsi_rtl():
+    ui.add_head_html("""
+        <link href="https://cdn.jsdelivr.net/npm/vazir-font@30.1.0/dist/font-face.css"
+              rel="stylesheet" type="text/css" />
 
         <style>
         body, .q-layout, .q-page-container, .q-page {
@@ -8,11 +12,11 @@ farsi_rtl = '''
             font-family: Vazir, sans-serif !important; 
         }
 
-
         .q-btn, .q-input, .q-field__native, .q-table, .q-card, .q-toolbar {
             font-family: Vazir, sans-serif !important;
         }
         </style>
-        '''
+    """)
 
-no_scroll = '<style>body { overflow: hidden; }</style>'
+def no_scroll():
+    ui.add_head_html('<style>body { overflow: hidden; }</style>')
