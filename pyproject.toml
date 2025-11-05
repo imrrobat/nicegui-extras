@@ -7,6 +7,9 @@ readme = "README.md"
 license = { text = "MIT" }
 dependencies = ["nicegui>=1.4.0"]
 
+[project.urls]
+"Homepage" = "https://github.com/imrrobat/nicegui-extras"
+
 [build-system]
 requires = ["setuptools", "wheel", "nicegui"]
 build-backend = "setuptools.build_meta"
