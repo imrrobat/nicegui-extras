@@ -1,6 +1,6 @@
 [project]
 name = "nicegui-extras"
-version = "0.1.1"
+version = "0.1.2"
 description = "A collection of CSS and utility helpers for NiceGUI"
 authors = [{ name = "Ali Heydari", email = "imrrobat@gmail.com" }]
 readme = "README.md"

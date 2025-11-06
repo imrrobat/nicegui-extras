@@ -2,6 +2,9 @@
 
 **NiceGUI-Extras** is a helper package for [NiceGUI](https://nicegui.io) that provides ready-to-use UI enhancements and utilities to make your NiceGUI apps more beautiful and flexible.
 
+![Downloads](https://static.pepy.tech/personalized-badge/nicegui-extras?period=total&units=international_system&left_color=black&right_color=green&left_text=Downloads)
+
+
 ---
 
 ## ✨ Features
@@ -81,29 +84,30 @@ ui.dialog().props(animated_dialog)
 
 ---
 
-### 📌 Sticky menu row
+حتماً 👍 نسخه جدید آموزش برای منوی چسبیده (Sticky Menu Row) به‌صورت تمیز و کاربردی می‌تونه این شکلی باشه:
 
-To create a sticky top menu, use:
+---
 
-```python
-menu_row = '''
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #222;
-    color: white;
-    padding: 10px;
-    z-index: 1000;
-'''
-```
+### 📌 Sticky Menu Row
 
-Example:
+To create a **sticky top menu** that stays fixed at the top of the page and keeps content visible below it, use the following helper:
 
 ```python
-with ui.row().style(menu_row):
-    ui.label('My Menu')
+from nicegui_extras.layout import menu_row
+
+with menu_row(side='left', height='70px'):
+    ui.button('Home')
+    ui.button('Docs')
+    ui.button('GitHub')
+    
+ui.label('Page content starts here...')
 ```
+
+This will create a top menu bar that:
+
+* stays fixed when scrolling
+* aligns all items **from the left side**
+* automatically adds margin so that other elements do not overlap with the menu
 
 ---
 
