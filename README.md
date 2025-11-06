@@ -84,10 +84,6 @@ ui.dialog().props(animated_dialog)
 
 ---
 
-حتماً 👍 نسخه جدید آموزش برای منوی چسبیده (Sticky Menu Row) به‌صورت تمیز و کاربردی می‌تونه این شکلی باشه:
-
----
-
 ### 📌 Sticky Menu Row
 
 To create a **sticky top menu** that stays fixed at the top of the page and keeps content visible below it, use the following helper:
