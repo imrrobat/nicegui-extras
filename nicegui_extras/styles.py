@@ -2,6 +2,7 @@ from nicegui import ui
 from contextlib import contextmanager
 
 
+# link_btn = 'q-btn q-btn-item non-selectable no-outline q-btn--flat q-btn--rectangle'
 def link_button(text: str, url: str, new_tab: bool = False):
     """Create a link styled as a button."""
     classes = 'q-btn q-btn-item non-selectable no-outline q-btn--flat q-btn--rectangle'
@@ -32,6 +33,36 @@ def menu_row(height: str = '60px', side: str = 'left'):
         yield row
     ui.space().style(f'height: {height};')
 
-# link_btn = 'q-btn q-btn-item non-selectable no-outline q-btn--flat q-btn--rectangle'
-
 animated_dialog = 'backdrop-filter="blur(8px) brightness(20%)"'
+
+# float_button = 'fixed bottom-4 left-4 text-white'
+
+def floating_button(
+        icon: str,
+        position: str = 'right',
+        color: str = 'primary',
+        on_click=None,
+    ):
+    """
+    Create a floating action button (FAB).
+    
+    Args:
+        icon (str): QIcon name, e.g. 'add', 'menu', 'arrow_upward'
+        position (str): 'left' or 'right'
+        color (str): Background color (passed via props), e.g. 'red', '#cc241d'
+        on_click: optional click handler
+    """
+
+    # Decide alignment
+    if position == 'left':
+        pos_class = 'fixed bottom-4 left-4'
+    else:
+        pos_class = 'fixed bottom-4 right-4'
+
+    # props: "color={color} unelevated round"
+    props = f'color={color} round unelevated'
+
+    btn = ui.button(icon=icon, on_click=on_click).props(props).classes(
+        f'{pos_class} text-white'
+    )
+    return btn
