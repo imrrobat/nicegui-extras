@@ -138,5 +138,3 @@ More features like improved dark mode and ready-made themes are coming soon!
 
 MIT License © 2025 Ali Heydari
 
-```
-

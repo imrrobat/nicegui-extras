@@ -66,3 +66,12 @@ def floating_button(
         f'{pos_class} text-white'
     )
     return btn
+
+@contextmanager
+def ccolumn(*, classes: str | None = None, style: str | None = None, props: str | None = None):
+    base_classes = 'items-center justify-center w-full h-screen'
+    with ui.column() \
+        .classes(f'{base_classes} {classes or ""}') \
+        .style(style or '') \
+        .props(props or '') as col:
+        yield col
